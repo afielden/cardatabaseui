@@ -3,6 +3,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 const EditCar = (props) => {
 
@@ -43,19 +45,19 @@ const EditCar = (props) => {
 
     return (
         <div>
-            <button onClick={handleClickOpen}>Edit</button>
+            <Button color="primary" size="small" onClick={handleClickOpen}>Edit</Button>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Edit</DialogTitle>
                 <DialogContent>
-                    <input type="text" placeholder="Brand" name="brand" value={car.brand} onChange={handleChange}/><br/>
-                    <input type="text" placeholder="Model" name="model" value={car.model} onChange={handleChange}/><br/>
-                    <input type="text" placeholder="Color" name="color" value={car.color} onChange={handleChange}/><br/>
-                    <input type="text" placeholder="Year" name="year" value={car.year} onChange={handleChange}/><br/>
-                    <input type="text" placeholder="Price" name="price" value={car.price} onChange={handleChange}/><br/>
+                    <TextField autoFocus fullWidth placeholder="Brand" name="brand" value={car.brand} onChange={handleChange}/><br/>
+                    <TextField fullWidth placeholder="Model" name="model" value={car.model} onChange={handleChange}/><br/>
+                    <TextField fullWidth placeholder="Color" name="color" value={car.color} onChange={handleChange}/><br/>
+                    <TextField fullWidth placeholder="Year" name="year" value={car.year} onChange={handleChange}/><br/>
+                    <TextField fullWidth placeholder="Price" name="price" value={car.price} onChange={handleChange}/><br/>
                 </DialogContent>
                 <DialogActions>
-                    <button onClick={handleClose}>Cancel</button>
-                    <button onClick={handleSave}>Save</button>
+                    <Button color="secondary" onClick={handleClose}>Cancel</Button>
+                    <Button color="primary" onClick={handleSave}>Save</Button>
                 </DialogActions>
             </Dialog>
         </div>
